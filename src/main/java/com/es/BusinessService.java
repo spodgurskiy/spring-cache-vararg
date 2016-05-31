@@ -2,5 +2,7 @@ package com.es;
 
 public interface BusinessService {
 
-    boolean businessMethod(Long id, String... args);
+    boolean definedKeyMethod(Long id, String... args);
+
+    boolean autoKeyMethod(Long id, String... args);
 }

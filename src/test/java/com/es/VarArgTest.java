@@ -23,23 +23,44 @@ public class VarArgTest {
     private BusinessService service;
 
     @Test
-    public void testEmptyVararg() {
-        assertTrue(service.businessMethod(10L));
+    public void testAutoEmptyVararg() {
+        assertTrue(service.autoKeyMethod(10L));
     }
 
     @Test
-    public void testSingleVararg() {
-        assertTrue(service.businessMethod(10L, "1"));
+    public void testAutoSingleVararg() {
+        assertTrue(service.autoKeyMethod(10L, "1"));
     }
 
     @Test
-    public void testMultipleVararg() {
-        assertTrue(service.businessMethod(10L, "1", "2"));
+    public void testAutoMultipleVararg() {
+        assertTrue(service.autoKeyMethod(10L, "1", "2"));
     }
 
     @Test
-    public void testNullVararg() {
-        assertTrue(service.businessMethod(10L, null));
+    public void testAutoNullVararg() {
+        assertTrue(service.autoKeyMethod(10L, null));
+    }
+
+
+    @Test
+    public void testKeyEmptyVararg() {
+        assertTrue(service.definedKeyMethod(10L));
+    }
+
+    @Test
+    public void testKeySingleVararg() {
+        assertTrue(service.definedKeyMethod(10L, "1"));
+    }
+
+    @Test
+    public void testKeyMultipleVararg() {
+        assertTrue(service.definedKeyMethod(10L, "1", "2"));
+    }
+
+    @Test
+    public void testKeyNullVararg() {
+        assertTrue(service.definedKeyMethod(10L, null));
     }
 
     @Configuration
